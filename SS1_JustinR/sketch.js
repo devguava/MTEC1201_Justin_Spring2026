@@ -1,6 +1,5 @@
 /*
-Session 2 by Justin Roldan
-https://p5js.org/reference/
+Short Study by Justin Roldan
 */
 function setup()
 {
