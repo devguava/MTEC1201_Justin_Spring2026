@@ -31,7 +31,7 @@ function draw()
     NR = NR + 1;
     NG = NG - 1;
     NB = NB - 1;
-    if (NR == RR && NG == RG && NB == RB){
+    if (NR === RR && NG === RG && NB === RB){
       NR = NR + 0;
       NG = NG - 0;
       NB = NB - 0;
@@ -40,7 +40,7 @@ function draw()
     NR = NR - 1;
     NG = NG + 1;
     NB = NB + 1;
-       if (NR == 140 && NG == 91 && NB == 106){
+       if (NR === 140 && NG === 91 && NB === 106){
         NR = NR - 0;
         NG = NG + 0;
         NB = NB + 0;
