@@ -41,6 +41,7 @@ function draw(){
 }
 
 function titleScene(){
+	scene = 0
     background(107,166,249);
     rectMode(CENTER);
     rect(startButtonXposition,startButtonYposition,startButtonXsize,startButtonYsize);
@@ -59,13 +60,6 @@ function titleScene(){
 	}
 }
 
-function mousePressed(){
-	if(scene == 0 && mouseX > 440 && mouseX < 840 && mouseY > 310 && mouseY < 410){
-		print('game start');
-		gameScene();
-	}
-}
-
 function gameScene(){
 	print('Time:', millis()/1000)
 	scene = 1;
@@ -81,9 +75,49 @@ function gameScene(){
 		scene = 2
 	}
 
-	if(millis()/1000 > 15){
+	if(millis()/1000 > 1){
 		print('Time Up')
 		scene = 3
+	}
+}
+
+function gameOver(){
+	scene = 2;
+	background(0,0,0);
+	text("You've been caught!",width/2,height/2);
+}
+
+function gameWin(){
+	scene = 3;
+	background(0,255,0);
+    rectMode(CENTER);
+	fill(255,255,255)
+	rect(1280/2,720/2,400,100);
+	fill(0,0,0)
+    textAlign(CENTER);
+    textSize(100);
+    text('You Made It Out!',width/2,200);
+    textSize(50);
+    text('Main Menu',width/2,380);
+	if(mouseX > 440 && mouseX < 840 && mouseY > 310 && mouseY < 410){
+        //print('in');
+		fill(255,255,255)
+	    rect(1280/2,720/2,400 + 25,100 + 25)
+		fill(0,0,0)
+	    textSize(75);
+		text('Main Menu',width/2,385);
+	}else{
+	    //print('out');
+	}
+}
+function mousePressed(){
+	if(scene == 0 && mouseX > 440 && mouseX < 840 && mouseY > 310 && mouseY < 410){
+		print('Game Start');
+		gameScene();
+	}
+	if(scene == 3 && mouseX > 440 && mouseX < 840 && mouseY > 310 && mouseY < 410){
+		print('Main Menu');
+		titleScene();
 	}
 }
 
@@ -149,16 +183,4 @@ class Chaser{
 		fill(255,0,0);
 	    circle(this.x,this.y,75);
 	}
-}
-
-function gameOver(){
-	scene = 2;
-	background(0,0,0);
-	text("You've been caught!",width/2,height/2);
-}
-
-function gameWin(){
-	scene = 3;
-	background(0,255,0);
-	text('You Made It Out!',width/2,height/2);
 }
