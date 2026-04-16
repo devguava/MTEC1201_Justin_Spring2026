@@ -76,6 +76,8 @@ function gameScene(){
 	print('Time:', millis()/1000)
 	scene = 1;
     background(203,153,96);
+	textSize(50)
+	text('Time:', millis()/1000, 100,10)
 	player.update();
 	player.draw();
 	chaser.update();
