@@ -1,5 +1,5 @@
 /*
-Title: 
+Title: Fire Chain
 Author: Justin Roldan
 reference: 
 Ball move down for loopby cs4all [https://editor.p5js.org/cs4all/sketches/Hyv07I6nZ] (An example of moving ellipses using for loops)
