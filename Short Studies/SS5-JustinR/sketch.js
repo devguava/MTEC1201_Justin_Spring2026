@@ -1,6 +1,7 @@
 /*
 Title: Fire Chain
 Author: Justin Roldan
+Description: A sketch that repicates the movements of a fire chain. Similary to the one shown in Mario titles.
 reference: 
 Ball move down for loopby cs4all [https://editor.p5js.org/cs4all/sketches/Hyv07I6nZ] (An example of moving ellipses using for loops)
 for()loop Rectangles by annA [https://editor.p5js.org/annA/sketches/7JUx_st6p] (An example in creating a for loop for rectangles)
