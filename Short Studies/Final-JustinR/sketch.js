@@ -26,6 +26,7 @@ let victoryhasPlayed = false;
 let gameOverhasPlayed = false;
 let shootSound;
 let destroySound;
+let escapedSound;
 // let timer;
 // let interval;
 // let startTime;
@@ -34,6 +35,7 @@ let destroySound;
 
 function preload(){
 	soundFormats('mp3', 'wav')
+	escapedSound = loadSound('audio/sfx/Escaped.wav')
 	shootSound = loadSound('audio/sfx/Shoot.wav');
     destroySound = loadSound('audio/sfx/Destroy.wav');
 	gameMusic = loadSound('audio/music/Background Music.mp3');
@@ -49,6 +51,7 @@ function setup(){
 	gameOverMusic.setVolume(0.5);
 	victoryMusic.setVolume(0.5);
 	mainMenuMusic.setVolume(0.5);
+	escapedSound.setVolume(0.5);
 	createCanvas(1280,720);
 	target0 = new Targets(random(2,10), random(1,4));
 	target1 = new Targets(random(2,10), random(1,4));
@@ -178,6 +181,7 @@ function gameScene(){
 	target3.draw();
 	target4.update();
 	target4.draw();
+
 	fill(161,161,161);
 	ellipse(width/2, 720, 1290, 200);
 	fill(100,100,100);
@@ -206,13 +210,13 @@ class Targets{
 	constructor(tempXSpeed, tempYSpeed){
 		this.x = random(100,1180);
 		this.y = 720;
-		this.ySpeed = tempYSpeed
-		this.xSpeed = tempXSpeed
-		this.colorR = 255
-		this.colorG = 0
-		this.colorB = 0
-		this.radius = 75
-		this.randomXDirection = random(-1,1)
+		this.ySpeed = tempYSpeed;
+		this.xSpeed = tempXSpeed;
+		this.colorR = 255;
+		this.colorG = 0;
+		this.colorB = 0;
+		this.radius = 75;
+		this.randomXDirection = random(-1,1);
 	}
 	update(){
 		//print('X Speed: ', this.xSpeed)
@@ -236,7 +240,6 @@ class Targets{
 			destroySound.play()
 			captured += 1
 			print("Got 'em");
-			
 		}
 	}
 
@@ -324,7 +327,7 @@ function information(){
 	fill(255,255,255);
 	textAlign(LEFT)
 	textSize(30)
-	text("Story:\nHello, Soldier.\n Your mission today. Take out those UFOs that have been ease dropping on our research facility. Show them what we do to those who get nosy.\n\nInstructions:\nLeft click on the targets using your mouse to capture those UFOs. Don't let them fly back to the ship, that's their gateaway vehical (ironic I know).", 325, 400, 550, 550)
+	text("Story:\nHello, Soldier.\n Your mission today. Take out those UFOs that have been eavesdropping on our research facility. Show them what we do to those who get nosy.\n\nInstructions:\nLeft click on the targets using your mouse to capture those UFOs. Don't let them fly back to the ship, that's their getaway.", 325, 400, 550, 550)
 	fill(255,255,255);
 	rect(85, 50, 100, 50)
 	fill(0,0,0)
