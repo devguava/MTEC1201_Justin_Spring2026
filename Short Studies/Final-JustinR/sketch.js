@@ -15,7 +15,7 @@ let target2;
 let target3;
 let target4;
 let button;
-let scene = 4;
+let scene = 0;
 let captured = 0;
 let requiredCapture;
 let gameMusic;
@@ -138,7 +138,6 @@ function mousePressed(){
 	}
 
 	if(scene == 2 && mouseX > 440 && mouseX < 840 && mouseY > 310 && mouseY < 410){
-		victoryMusic.stop()
 		startMenu();
 	}
 
@@ -147,7 +146,10 @@ function mousePressed(){
 	}
 
 	if(scene == 3 && mouseX > 440 && mouseX < 840 && mouseY > 310 && mouseY < 410){
-		gameOverMusic.stop()
+		startMenu();
+	}
+
+	if(scene == 4 && mouseX > 36 && mouseX < 136 && mouseY > 28 && mouseY < 76){
 		startMenu();
 	}
 }
@@ -245,6 +247,7 @@ class Targets{
 }
 
 function endingBad(){
+	gameMusic.stop()
 	scene = 2;
 }
 
@@ -277,6 +280,7 @@ function gameOver(){
 }
 
 function endingGood(){
+	gameMusic.stop()
 	scene = 3;
 }
 
@@ -320,5 +324,19 @@ function information(){
 	fill(255,255,255);
 	textAlign(LEFT)
 	textSize(30)
-	text("Story:\n\nHello, Soldier.\n Your mission today. Take out those UFOs that have been ease dropping on our research facility. Show them what we do to those who get nosy.\n\nInstructions:\nLeft click on the targets using your mouse to capture those UFOs. Don't let them fly back to the ship, that's their exit.", 325, 400, 550, 550)
+	text("Story:\nHello, Soldier.\n Your mission today. Take out those UFOs that have been ease dropping on our research facility. Show them what we do to those who get nosy.\n\nInstructions:\nLeft click on the targets using your mouse to capture those UFOs. Don't let them fly back to the ship, that's their gateaway vehical (ironic I know).", 325, 400, 550, 550)
+	fill(255,255,255);
+	rect(85, 50, 100, 50)
+	fill(0,0,0)
+	text("Back",50, 60)
+	if(mouseX > 36 && mouseX < 136 && mouseY > 28 && mouseY < 76){
+		//print('in');
+		fill(255,255,255);
+		rect(85, 50, 125, 75)
+		fill(0,0,0)
+		textSize(40)
+		text("Back",40, 65)
+	}else{
+		//print('out');
+	}
 }
