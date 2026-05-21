@@ -89,7 +89,7 @@ class Targets{
 			this.xSpeed *= -1;
 		}
 		print('X Speed: ', this.xSpeed)
-		print('Y Speed: ', this.ySpeed)
+		// print('Y Speed: ', this.ySpeed)
 
 	}
 	draw(){
