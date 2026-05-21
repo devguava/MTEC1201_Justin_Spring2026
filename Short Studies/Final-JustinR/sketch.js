@@ -79,10 +79,10 @@ class Targets{
 		this.ySpeed = tempYSpeed
 		this.xSpeed = tempXSpeed
 		this.radius = 75
-		//this.randomXDirection = random(-1,1)
+		this.randomXDirection = random(-1,1)
 	}
 	update(){
-		this.x = this.x + (this.xSpeed * -1);
+		this.x = this.x + (this.xSpeed * this.randomXDirection);
 		this.y -= this.ySpeed;
 
 		if (this.x > width - (this.radius - 40) || this.x < 0 + (this.radius - 40)){
