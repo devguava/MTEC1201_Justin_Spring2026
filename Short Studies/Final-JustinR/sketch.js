@@ -191,15 +191,15 @@ function gameScene(){
 	endShape(CLOSE);
 	
 
-	if(captured == requiredCapture){
-		scene == 3;
-		gameMusic.stop()
-	}
+	// if(captured == requiredCapture){
+	// 	scene == 3;
+	// 	gameMusic.stop()
+	// }
 	
-	if(captured < requiredCapture){
-		scene == 2;
-		gameMusic.stop()
-	}
+	// if(captured < requiredCapture){
+	// 	scene == 2;
+	// 	gameMusic.stop()
+	// }
 }
 
 class Targets{
